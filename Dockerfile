@@ -60,7 +60,7 @@ RUN apt-get update && apt-get install -y \
 
 # unifi version
 # From: https://www.ubnt.com/download/unifi/
-ENV UNIFI_VERSION "5.10.25"
+ENV UNIFI_VERSION "5.11.46"
 
 # install unifi
 RUN apt-get update && apt-get install -y \
