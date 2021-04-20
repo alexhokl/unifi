@@ -10,7 +10,7 @@ services:
       - db:/data/db
       - dbcfg:/data/configdb
   controller:
-    image: "jacobalberty/unifi:6.0.23"
+    image: jacobalberty/unifi:6.1.71
     container_name: unifi_controller
     depends_on:
       - mongo
@@ -27,6 +27,9 @@ services:
       - run:/var/run/unifi
       # Mount local folder for backups and autobackups
       - $HOME/unifi_backup:/unifi/data/backup
+    user: unifi
+    sysctls:
+      net.ipv4.ip_unprivileged_port_start: 0
     environment:
       DB_URI: mongodb://mongo/unifi
       STATDB_URI: mongodb://mongo/unifi_stat
