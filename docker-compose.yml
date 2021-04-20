@@ -27,7 +27,7 @@ services:
       - run:/var/run/unifi
       # Mount local folder for backups and autobackups
       - $HOME/unifi_backup:/unifi/data/backup
-    user: unifi
+    # user: unifi
     sysctls:
       net.ipv4.ip_unprivileged_port_start: 0
     environment:
